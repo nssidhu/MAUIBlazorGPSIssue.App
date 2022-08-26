@@ -1,5 +1,6 @@
 ﻿@page "/"
 
+@inject NavigationManager _nav
 
 <h1>Get Location using Native API</h1>
 
@@ -16,6 +17,11 @@ Longitude : @longitude
 @*<QrCodeScanner.ScanQrCode>
 
 </QrCodeScanner.ScanQrCode>*@
+
+
+
+<br/>
+<button @onclick="@(()=>_nav.NavigateTo("/JavaScriptGoogleMap"))" >JavaScript Google Map</button>
 
 @code{
 
