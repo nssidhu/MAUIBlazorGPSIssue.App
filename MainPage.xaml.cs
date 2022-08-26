@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components.WebView;
+using Microsoft.Maui.Controls;
 
 namespace MAUIBlazorGPSIssue;
 
