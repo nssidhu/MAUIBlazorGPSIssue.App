@@ -1,0 +1,28 @@
+﻿@page "/counter"
+@using GoogleMapClassLibrary
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+<GoogleMapClassLibrary.GoogleMap @ref="MapRef" LocationUpdatedEvent="GPSLocationRecieved">
+
+</GoogleMapClassLibrary.GoogleMap>
+
+@code {
+    private int currentCount = 0;
+
+    GoogleMapClassLibrary.GoogleMap MapRef;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+    private void GPSLocationRecieved(MapLocation lc)
+    {
+        MapRef.ShowCurrentPosition(lc.Latitude, lc.Longitude);
+        
+    }
+}
