@@ -51,10 +51,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="BlazorGoogleMaps" Version="2.2.3" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\..\..\..\Downloads\BlazorHybridWebViewGPSIssue-master\BlazorHybridWebViewGPSIssue-master\GoogleMapClassLibrary\GoogleMapClassLibrary.csproj" />
     </ItemGroup>
 
