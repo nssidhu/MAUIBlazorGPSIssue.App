@@ -1,11 +1,7 @@
 ﻿@page "/"
 
-<h1>Hello, world!</h1>
 
-Welcome to your new app.
-
-<SurveyPrompt Title="How is Blazor working for you?" />
-<h1>Hello, world!</h1>
+<h1>Get Location using Native API</h1>
 
 Latitude : @latitude
 <br/>
@@ -13,7 +9,13 @@ Longitude : @longitude
 <br/>
 <button @onclick="GetPosition">Get Position</button>
 <br />
-Error : @errorMessage
+ @errorMessage
+<br />
+<br />
+
+@*<QrCodeScanner.ScanQrCode>
+
+</QrCodeScanner.ScanQrCode>*@
 
 @code{
 
@@ -29,7 +31,8 @@ Error : @errorMessage
         {
             latitude = "";
             longitude = "";
-            errorMessage = "";
+            errorMessage = "Getting Location, Please wait........";
+            StateHasChanged();
             GeolocationRequest request = new GeolocationRequest(GeolocationAccuracy.Medium, TimeSpan.FromSeconds(10));
 
             _cancelTokenSource = new CancellationTokenSource();
@@ -40,6 +43,7 @@ Error : @errorMessage
             {
                 latitude = location.Latitude.ToString();
                 longitude = location.Longitude.ToString();
+                errorMessage = "";
                 StateHasChanged();
             }
         }
