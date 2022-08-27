@@ -72,6 +72,13 @@
 
     <ItemGroup>
       <ProjectReference Include="..\..\..\..\Downloads\BlazorHybridWebViewGPSIssue-master\BlazorHybridWebViewGPSIssue-master\GoogleMapClassLibrary\GoogleMapClassLibrary.csproj" />
+      <ProjectReference Include="..\QrCodeScanner\QrCodeScanner.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Update="Pages\ScanQrCode.razor">
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      </Content>
     </ItemGroup>
 
 </Project>

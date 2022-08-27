@@ -1,0 +1,26 @@
+﻿@page "/ScanCode"
+
+<h3>QrCodeScanner</h3>
+
+<QrCodeScanner.ScanQrCode OnScanned="OnScanComplete" OnError="OnScanError" OpenedInModalDialog="false">
+
+</QrCodeScanner.ScanQrCode>
+
+QrData : @QrData;
+<br/>
+Error : @error;
+
+@code {
+    string QrData = "";
+    string error = "";
+
+    private void OnScanComplete(string data)
+    {
+        QrData = data;
+    }
+
+    private void OnScanError(string data)
+    {
+        error = data;
+    }
+}
